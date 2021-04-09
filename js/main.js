@@ -53,6 +53,20 @@
     });
     
     
+    // Achievements isotope and filter
+    var achievementsIsotope = $('.achievements-container').isotope({
+        itemSelector: '.achievements-item',
+        layoutMode: 'fitRows'
+    });
+
+    $('#achievements-flters li').on('click', function () {
+        $("#achievements-flters li").removeClass('filter-active');
+        $(this).addClass('filter-active');
+
+        achievementsIsotope.isotope({filter: $(this).data('filter')});
+    });
+    
+    
     // Review slider
     $('.review-slider').slick({
         autoplay: true,
